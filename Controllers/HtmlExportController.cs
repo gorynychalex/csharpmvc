@@ -36,7 +36,6 @@ namespace EPPlus.WebSampleMvc.NetCore.Controllers
                 ts = TableStyles.Dark1;
             }
 
-            
             ViewData["TableStyle"] = ts.ToString();
             model.SetupSampleData(model.Theme,ts);
             
