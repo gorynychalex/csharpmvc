@@ -33,11 +33,13 @@ namespace EPPlus.WebSampleMvc.NetCore.Controllers
         {
             if(!Enum.TryParse(model.TableStyle, out TableStyles ts))
             {
-                ts = TableStyles.Light1;
+                ts = TableStyles.Dark1;
             }
 
-            ViewData["TableStyle"] = ts.ToString();
+            
+            ViewData["TableStyle"] = TableStyles.Dark1.ToString();
             model.SetupSampleData(model.Theme,ts);
+            
             // if(model.GetWorkbook)
             // {
             //     return File(model.WorkbookBytes, ContentType, "EPPlusHtmlSample1.xlsx");

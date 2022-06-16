@@ -47,7 +47,7 @@ namespace EPPlus.WebSampleMvc.NetCore.Models.HtmlExport
                 var sheet = package.Workbook.Worksheets.Add("Persons");
                 var tableRange = sheet.Cells["A1"].LoadFromDataTable(_dataTable, true, style);
                 // set number format for the BirthDate column
-                sheet.Cells[tableRange.Start.Row + 1, 4, tableRange.End.Row, 4].Style.Numberformat.Format = "yyyy-MM-dd";
+                sheet.Cells[tableRange.Start.Row + 1, 2, tableRange.End.Row, 2].Style.Numberformat.Format = "yyyy-MM-dd";
                 tableRange.AutoFitColumns();
 
                 var table = sheet.Tables.GetFromRange(tableRange);
@@ -84,7 +84,7 @@ namespace EPPlus.WebSampleMvc.NetCore.Models.HtmlExport
                         fileInfo = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"themes\\Parallax.thmx"));
                         break;
                     default:
-                        fileInfo = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"themes\\Ion.thmx"));
+                        fileInfo = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"themes/Ion.thmx"));
                         break;
                 }
                 package.Workbook.ThemeManager.Load(fileInfo);
